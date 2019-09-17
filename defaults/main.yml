@@ -1,0 +1,10 @@
+---
+# defaults file for az_resource_group
+state: present
+resource_group_def:
+  - resource_group_name: name
+    location: northeurope
+    tag_contact: contact_name
+    tag_project: Project_name
+    tag_stage: Dev
+    tag_cost_center:  Datacenter_north

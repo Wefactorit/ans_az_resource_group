@@ -1,0 +1,18 @@
+---
+# tasks file for az_resource_group
+
+
+- name: Create resource group
+  azure_rm_resourcegroup:
+    name: "{{ item.resource_group_name }}"
+    location: "{{ item.location }}"
+    tags:
+        contact: "{{ item.tag_contact }}"
+        project_name: "{{ item.tag_project }}"
+        cost_center: "{{ item.tag_cost_center }}"
+        stage: "{{ item.tag_stage }}"
+    state: "{{ state }}"
+  with_items:
+    - "{{ resource_group_def }}"
+  tags:
+    - resource_group
